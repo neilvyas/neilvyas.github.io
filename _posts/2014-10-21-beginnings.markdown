@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Beginnings"
-date:   2014-10-12 23:46:00
+date:   2014-10-21 23:46:00
 categories: general
 location: Austin, Texas
 tags: beginning late-night

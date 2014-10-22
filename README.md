@@ -1,5 +1,6 @@
 Travelog Theme
 ---
+Customized by Neil Vyas
 
 Travelog is a theme for [Jekyll](http://jekyllrb.com/) that is both elegant and downright simple.
 

@@ -48,4 +48,6 @@ The resolution isn't that great, so I used [this site](http://image.online-conve
 
 Then, I processed it in GIMP until I got something that I was happy with. That step was fairly straightforward; the thing of note is that the red color is actually from the official git logo, which is apt, since I'm using github to host and manage this blog. Finally, I used [this site](http://realfavicongenerator.net/) to generate the complete favicon package, and it works as expected. I even stuck a shortcut on the homescreen of my Nexus 5 (you should too, hint hint).
 
+I also added in the little watermarks to the side of the post titles, which I created using inkscape and arduously debugged until they displayed properly. If you haven't noticed yet, I'm a big fan of vector graphics formats. I still have to get everything to render properly on mobile; the problem is that images are too wide, but I'll mess with all of that later.
+
 And people say vector calculus isn't relevant in the real world! Evidently, not only can pure math generate some very beautiful images, with a little bit of application, it can also store and manipulate those images in the real world beautifully.

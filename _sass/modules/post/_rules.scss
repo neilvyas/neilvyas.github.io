@@ -9,7 +9,7 @@
     }
 
     .post-header {
-        padding-left: 0px;
+        padding-left: 40px;
         min-height: $post-header-height;
         background-repeat: no-repeat;
         background-position: left center;
@@ -18,7 +18,7 @@
     }
 
     .post-header--dw {
-        
+       background-image: url(/img/logo.png); 
     }
 
     .post-header--ar {

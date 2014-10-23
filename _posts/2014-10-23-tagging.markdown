@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Tagging System"
+date:   2014-10-23 01:04:00
+categories: posts
+location: Austin, Texas
+tags: programming design 
+---
+
+I implemented the tagging system. There are six tags; mathematics, graphics, design, finance, programming, and musings. As it turns out, Liquid is very interesting to work with, in that it's quite limited.
+
+<!--preview-->

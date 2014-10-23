@@ -7,18 +7,12 @@
         {{ include.content }}
     </div>
     <div class="post-excerpt">
-        {% if post.content contains '<!--more-->' %}
-            {{ post.content | split:'<!--more-->' | first }}
-            <a href={{ post.url }}><h2$link_color_over>continue...</h2></a>
-        {% else %}
-            {{ post.excerpt }}
-            <a href={{ post.url }}><h2$link_color_over>continue...</h2></a>
-        {% endif %}
+        {{ post.excerpt }}<h2>...</h2><a href={{ post.url }}><h2$link_color_over>start reading</h2></a>
     </div>
     <div class="post-footer">
         <ul class="post-footer-tags">
             {% for tag in include.post.tags %}
-              <li class="post-footer-tag">#{{ tag }}</li>
+              <li class="post-footer-tag">@{{tag}}</li>
             {% endfor %}
         </ul>
         <a href="https://www.google.com/maps/search/{{ include.post.location }}" target="_blank" class="post-footer-location">{{ include.post.location }}</a>

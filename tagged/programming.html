@@ -1,7 +1,6 @@
 ---
 layout: default
-title: esoteric-musings
-sub: late-night
+title: programming
 ---
 
 <!-- loop through pages and assign all ones tagged as:
@@ -11,7 +10,7 @@ sub: late-night
 	that we have to make individual pages :(
 	-->
 {% for post in site.posts %}
-  {% if post.tags contains {{page.title}} or post.tags contains {{page.sub}} %}
+  {% if post.tags contains {{page.title}} %}
   	{% include post.html post=post content=post-excerpt %}
   {% else %}
   {% endif %}

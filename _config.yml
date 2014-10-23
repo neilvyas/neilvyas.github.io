@@ -19,3 +19,5 @@ paginate: 5
 # Sass
 sass:
     style: :compressed
+
+excerpt_separator: <!--preview-->

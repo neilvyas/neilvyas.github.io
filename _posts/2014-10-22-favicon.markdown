@@ -2,15 +2,17 @@
 layout: post
 title:  "Favicon Stuff"
 date:   2014-10-22 14:27:00
-categories: general graphics
+categories: posts
 location: Austin, Texas
-tags: beginning graphics mathematics
+tags: graphics mathematics
 ---
 
 Today, in addition to messing with my custom apex domain name (that's an ongoing struggle, and I'll post about that when I'm satisfied with it), I also created a favicon for the site. It actually represents some interesting math, which I'll also try to explain.
 
 ##MATHEMATICS
 The original image is of the julia set of a third-degree polynomial with one quaternion degree. I like to think of the two complementary sets we're dealing with, the Julia and Fatou sets, as they relate to fixed- or stationary-points on functions. I won't go into too much depth here, since this isn't meant to be a math post, but further reading can be found [here](http://en.wikipedia.org/wiki/Julia_set) and [here](http://mathworld.wolfram.com/JuliaSet.html), and I'll include some code snippets that you can run to see a fixed-point attractor in action.
+
+<!--preview-->
 
 A function has a fixed point attractor if repeated iterations of that function converge to a point. For example, if you repeatedly iterate cos(), you'll see the values converging to approximately 0.72. I think this is one of the coolest things I've come across in mathematics, and it is surprisingly fundamental. Fixed-point theorems pop up all over the place, especially topology and function analysis, like the [Banach Fixed-Point Theorem](http://en.wikipedia.org/wiki/Banach_fixed-point_theorem). 
 

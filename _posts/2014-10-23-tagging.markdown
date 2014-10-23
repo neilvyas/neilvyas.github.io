@@ -9,10 +9,8 @@ tags: programming design
 
 I revamped a lot of things about the site, making it both more aesthetically consistent and more feauture-complete. Most of it was fiddling around with fonts, formats, and graphics.
 
-<!--preview-->
-
 ##PROGRAMMING
-The template I'm using for this site is the excellent [travelog theme](https://github.com/rowanoulton/travelog-theme), with some heavy customization by me. The main additions I have made so far are implementing the tagging system (I don't know how the original one is designed to work) and changing the way posts are displayed on the main page. Once I get enough posts that pagination becomes an issue, I'll probably end up tweaking that, too.
+The template I'm using for this site is the excellent [travelog theme](https://github.com/rowanoulton/travelog-theme), with some heavy customization by me.<!--preview--> The main additions I have made so far are implementing the tagging system (I don't know how the original one is designed to work) and changing the way posts are displayed on the main page. Once I get enough posts that pagination becomes an issue, I'll probably end up tweaking that, too.
 
 For the tagging system, I just made individual pages under /tagged for each of the six tags. I wanted to just have a main "tagged" page that would employ HTML querystrings to populate the page with the appropriate posts, but it seems like, unless I'm wrong, we're not allowed to do that in Liquid. I also made the tag elements at the bottom of the post clickable. In any case, I kind of like this approach better. Limiting myself to six tags should help keep my posts focused, and it also means I can have that nice row of tag page links across the top.
 

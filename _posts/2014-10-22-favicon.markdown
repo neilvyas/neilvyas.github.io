@@ -29,22 +29,22 @@ ntimesf cos 20 3.14
 
 If you want a visual of what this is doing, this image from wikipedia helped me:
 
-![I should generate an animated one!]({{ site.url }}/assets/cos_fixed_point.png){:.foo width="500"}
+![I should generate an animated one!]({{ site.url }}/assets/cos_fixed_point.png){:.foo width="200px";max-width="100%" }
 
 ##GRAPHICS
 This is the favicon:
 
-![Locutus' Icon]({{ site.url }}/assets/julia-red-orange.png){:.foo width="500"}
+![Locutus' Icon]({{ site.url }}/assets/julia-red-orange.png){:.foo width="200px";max-width="100%"}
 
 *Ain't she beautiful?*
 
 I generated it from this image, which I found in some math wallpapers thread ages ago:
 
-![The original image]({{ site.url }}/assets/julia_original.jpg){:.foo width="500"}
+![The original image]({{ site.url }}/assets/julia_original.jpg){:.foo width="100%"}
 
 The resolution isn't that great, so I used [this site](http://image.online-convert.com/convert-to-svg) to convert it to a vector file format:
 
-![Vectorized images are a godsend]({{ site.url }}/assets/julia.svg){:.foo width="500"}
+![Vectorized images are a godsend]({{ site.url }}/assets/julia.svg){:.foo width="100%"}
 
 *This actually is a great wallpaper now!*
 

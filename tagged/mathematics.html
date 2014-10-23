@@ -1,0 +1,17 @@
+---
+layout: default
+title: mathematics
+---
+
+<!-- loop through pages and assign all ones tagged as:
+	page.title
+	yay for modularity!!
+	unfortunately, we can't access the HTML querystring in liquid, which means
+	that we have to make individual pages :(
+	-->
+{% for post in site.posts %}
+  {% if post.tags contains {{page.title}} %}
+  	{% include post.html post=post content=post-excerpt %}
+  {% else %}
+  {% endif %}
+{% endfor %}

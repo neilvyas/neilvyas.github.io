@@ -12,7 +12,7 @@
     <div class="post-footer">
         <ul class="post-footer-tags">
             {% for tag in include.post.tags %}
-              <li class="post-footer-tag">@{{tag}}</li>
+              <li class="post-footer-tag">@<a href=/tagged/{{tag}}>{{tag}}</a></li>
             {% endfor %}
         </ul>
         <a href="https://www.google.com/maps/search/{{ include.post.location }}" target="_blank" class="post-footer-location">{{ include.post.location }}</a>

@@ -2,9 +2,9 @@
 layout: post
 title:  "Beginnings"
 date:   2014-10-21 23:46:00
-categories: general
+categories: posts
 location: Austin, Texas
-tags: design
+tags: design musings
 ---
 
 Hello, World!

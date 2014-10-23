@@ -16,25 +16,25 @@ For the tagging system, I just made individual pages under /tagged for each of t
 
 Here's some of the code:
 
-{% highlight liquid %}
----
-layout: default
-title: design
----
+{% raw %}
+	---
+	layout: default
+	title: design
+	---
 
-<!-- loop through pages and assign all ones tagged as:
-	page.title
-	yay for modularity!!
-	unfortunately, we can't access the HTML querystring in liquid, which means
-	that we have to make individual pages :(
-	-->
-{% for post in site.posts %}
-  {% if post.tags contains {{page.title}} %}
-  	{% include post.html post=post content=post-excerpt %}
-  {% else %}
-  {% endif %}
-{% endfor %}
-{% endhighlight %}
+	<!-- loop through pages and assign all ones tagged as:
+		page.title
+		yay for modularity!!
+		unfortunately, we can't access the HTML querystring in liquid, which means
+		that we have to make individual pages :(
+		-->
+	{% for post in site.posts %}
+	  {% if post.tags contains {{page.title}} %}
+	  	{% include post.html post=post content=post-excerpt %}
+	  {% else %}
+	  {% endif %}
+	{% endfor %}
+{% endraw %}
 
 As is evident, it's a pretty simple implementation. The tags are specified in each post's YAML front matter (the stuff between the triple dashes, at the top).
 

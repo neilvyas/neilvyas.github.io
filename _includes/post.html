@@ -1,10 +1,19 @@
 <section class="post">
     <div class="post-header post-header--dw">
         <a href="{{ include.post.url }}"><h3 class="post-header-title">{{ include.post.title }}</h3></a>
-        <h4 class="post-header-date"><span class="ordinal">{{ include.post.date | date: "%e" }}</span> {{ include.post.date | date: "%B &#8217;%y" }}</h4>
+        <h3 class="post-header-date"><span class="ordinal">{{ include.post.date | date: "%e" }}</span> {{ include.post.date | date: "%B &#8217;%y" }}</h3>
     </div>
     <div class="post-body">
         {{ include.content }}
+    </div>
+    <div class="post-excerpt">
+        {% if post.content contains '<!--more-->' %}
+            {{ post.content | split:'<!--more-->' | first }}
+            <a href={{ post.url }}><h2$link_color_over>continue...</h2></a>
+        {% else %}
+            {{ post.excerpt }}
+            <a href={{ post.url }}><h2$link_color_over>continue...</h2></a>
+        {% endif %}
     </div>
     <div class="post-footer">
         <ul class="post-footer-tags">
@@ -12,10 +21,6 @@
               <li class="post-footer-tag">#{{ tag }}</li>
             {% endfor %}
         </ul>
-        <!-- <ul class="post-footer-continued">
-            <br> 
-            <p><a href={{ post.url }}><h2>continued...</h2></a></p>
-        </ul> -->
         <a href="https://www.google.com/maps/search/{{ include.post.location }}" target="_blank" class="post-footer-location">{{ include.post.location }}</a>
     </div>
 </section>

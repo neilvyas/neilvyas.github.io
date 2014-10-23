@@ -26,7 +26,7 @@
     }
 
     .post-header-title {
-        margin-bottom: 5px;
+        margin-bottom: 2px;
         font-family: $title-font;
         font-size: 18px;
         font-weight: 500;
@@ -41,9 +41,9 @@
     }
 
     .post-header-date {
-        font-family: $caption-font;
-        font-style: italic;
-        font-weight: normal;
+        font-family: $regular-font;
+        font-style: normal;
+        font-weight: 300;
         color: #444;
         letter-spacing: 1px;
     }

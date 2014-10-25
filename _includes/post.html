@@ -12,6 +12,7 @@
     </div>
     <div class="post-footer">
         <ul class="post-footer-tags">
+            <h2>tagged as</h2><br>
             {% for tag in include.post.tags %}
               <li class="post-footer-tag">@<a href=/tagged/{{tag}}>{{tag}}</a></li>
             {% endfor %}

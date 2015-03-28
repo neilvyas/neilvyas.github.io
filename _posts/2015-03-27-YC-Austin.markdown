@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "YC Austin Meetup"
+type: posts
+---
+
+This weekend was the YC Austin meetup, which was more or less a discussion panel featuring Justin Kan from Twitch, a YC partner, Steve Huffman, co-founder of Reddit and Hipmunk, James from Tilt, Lloyd and Jeremy from OwnLocal, and Scott from Treeline. Most of the questions answered were talking about the founders' experiences both during and after their time in YC. I found that most of what I learned from the panel was just gaining insight into how people like Justin Kan and Steve Huffman think (they think like completely reasonable people, no surprise).
+
+I did get to talk to Justin, Steve, and Jeremy one-on-one, which was a really great experience. Below are some snippets I found interesting:
+
+- Justin Kan:
+
+>We get a lot of "data" companies at YC. They're mostly companies that sell DS as a tool or a service to other companies, predictably.
+>*(NB: you can find a [pretty good list of those companies here](http://mlwave.com/ycombinator-2014-data-science-start-ups/))*
+>
+>I don't think Data Science is in a bubble right now.
+
+DS is generally regarded as a really sexy job, but if you look at a lot of what's happening, the actual companies in the space aren't really game-changing. You have lots of companies that sell Software-as-a-Service or Platform-as-a-Service platforms to businesses to improve customer retention, CRM system management, marketing, etc. Reading that list, it doesn't seem like most of them are terribly interesting. However, they do solve existing problems, so you can't fault them. This ties in nicely to his sentiment that DS isn't in a bubble right now, because there's still lots of value to be gained by applying DS to almost everything.
+
+- Steve Huffman:
+
+>At reddit, we didn't really give data science any emphasis. That was a huge mistake.
+>
+>At hipmunk, data science is at the core of what we do; we process something like 50Gb of data a day.
+>There were instances when we thought that we didn't want to do things in the same way that other travel sites did them,
+>like not ordering hotels based on price *(NB: [hipmunk](https://www.hipmunk.com/) is an interesting travel site 
+>because of how they present results)*, but as it turns out, sometimes we find that customers prefer things that run 
+>contrary to our thinking and yet doing things the way that customers seem to prefer earns us more money.
+
+I'm probably going to pick Steve's brain more about data science at hipmunk, so I'll post anything interesting here.
+It's interesting to note that, apparently, data science wasn't really prominent at reddit. I know the term *data science* is incredibly ambiguous - data science is some nebulous concept that everybody understands but nobody knows - but it seems like it would have been incredibly natural to have a data science or analytics team at reddit (I'm sure reddit has analytics for stuff like advertising, hosting, etc, but I mean stuff like [messing with reddit's voting algorithm](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=reddit%20voting%20algorithm), which is probably the most important feature of the site).
+
+I thought [OwnLocal](http://ownlocal.com/) was a really interesting case study in tech startups. They don't really do something super "sexy" in the eyes of most people; OwnLocal brands itself as "the automated digital ad agency for local media", so they encompass both offline media and advertising, which don't strike me as particularly exciting. But instead of trying to dramatically alter the way these existing media outlets run, their approach was basically "we already have journalism figured out, it's just the business model that needs to change." It was really refreshing to hear the co-founders of a YC startup talk about growing their business responsibly and emphasizing the need to find where your product fits in the market, since the normal refrain observed in the actions of startups is "start up, cash in, sell out, bro down."
+
+All in all, I really enjoyed the experience. It's certainly not everyday you get to talk to Justin Kan and Steve Huffman, among others, but even disregarding that I thought I learned some interesting things.

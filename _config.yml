@@ -1,23 +1,13 @@
 # Site settings
-title: Locutus
-subtitle: "The Journal of Neil Vyas"
+title: NeilVyas
 email: neilvyas@utexas.edu
-description: "Studying pure mathematics at UT Austin, with an interest in finance, data visualization, statistics, and programming."
-baseurl: ""
-#url: "http://yourdomain.com"
-#twitter_username: "rowanoulton"
-github_username:  "neilvyas"
-#instagram_username: "rowanoulton"
+description: > # this means to ignore newlines until "baseurl:"
+    A collection of things I find interesting, primarily math and cs related.
+    I'm a math major; my interests are primarily algebra and complex analysis.
+    Currently, I work as a data science intern at Civitas Learning.
+baseurl: "" 
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+github_username:  neilvyas
 
 # Build settings
 markdown: kramdown
-permalink: pretty
-
-# Pagination
-paginate: 5
-
-# Sass
-sass:
-    style: :compressed
-
-excerpt_separator: <!--preview-->

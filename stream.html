@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+	{% if post.type contains "stream" %}
+		{% include stream_incl.html post=post content=post.excerpt %}
+	{% else %}
+	{% endif %}
+{% endfor %}

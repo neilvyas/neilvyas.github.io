@@ -1,21 +1,6 @@
-<section class="post">
-    <div class="post-header post-header--dw">
-        <a href="{{ include.post.url }}"><h3 class="post-header-title">{{ include.post.title }}</h3></a>
-        <h3 class="post-header-date">{{ include.post.date | date: "%Y | %A, %B " }}<span class="ordinal">{{ include.post.date | date: "%d" }}</span></h3>
-    </div>
-    <div class="post-body">
-        {{ include.content }}
-    </div>
-    <div class="post-excerpt">
-        {{ post.excerpt }}<h2>...</h2>
-    </div>
-    <div class="post-footer">
-        <ul class="post-footer-tags">
-            <h2>tagged as</h2><br>
-            {% for tag in include.post.tags %}
-              <li class="post-footer-tag">@<a href=/tagged/{{tag}}>{{tag}}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="https://www.google.com/maps/search/{{ include.post.location }}" target="_blank" class="post-footer-location">{{ include.post.location }}</a>
-    </div>
-</section>
+<div class="post-title">
+  <h1>{{ include.post.title }}</h1>
+</div>
+<div class="post-content">
+    {{ include.content }}
+</div>

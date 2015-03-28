@@ -1,13 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
-    <body>
-      <div id="ribbon"></div>
-      <div id="wrap">
-        {% include header.html %}
-        {{ content }}
+{% include head.html %}
+<body style="background: #efefef; font-family: Helvetica">
+  <div class="Container">
+    <div class="column left">
+      <div class="nav">
+        <div class="wrapper">
+          <div class="wrapper-content">
+            <a href="/" id="brand">
+              Neil
+              <br>Vyas</a>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <a href="/stream.html">stream</a>
+            </li>
+            <li>
+              <a href="/posts.html">posts</a>
+            </li>
+            <li>
+              <a href="/links.html">links</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      {% include footer.html %}
-      <script type="text/javascript" src="{{ site.baseurl }}/js/travelog.js"></script>
+      <div class="column center">
+        <div style="margin-top: 30%;">
+        </div>
+        {{ content }}        
+      </div>
+      <div class="column right">
+        <div class="nav right">
+          <div class="wrapper">
+          </div>
+          <ul>
+            <li>
+              <a href="/about.html">about</a>
+            </li>
+            <li>
+              <a href="mailto:vyas.neil.nv@gmail.com">email</a>
+            </li>
+            <li>
+              <a href="{{ "/feed.xml" | prepend: site.baseurl }}">rss</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </body>
-</html>

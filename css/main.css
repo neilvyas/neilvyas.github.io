@@ -55,8 +55,8 @@
 }
 
 .nav {
-  position: static;
-  margin-top: 40%;
+  position: fixed;
+  margin-top: 80px;
   width: 200px;
   height: 80%;
 }

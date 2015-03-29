@@ -104,6 +104,10 @@ hr {
   margin-bottom: -10px;
 }
 
+table {
+  margin: 0 auto;
+}
+
 .nav li {
   margin: 0.3em auto;
   padding: 0.1em;

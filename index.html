@@ -2,6 +2,11 @@
 layout: default
 ---
 
+<div id="search-container">
+  <input type="text" id="search-input" placeholder="search...">
+  <ul id="results-container"></ul>
+</div>
+
 {% for post in site.posts %}
   {% if post.type contains "post" %}
     {% include post-preview.html post=post content=post.excerpt %}

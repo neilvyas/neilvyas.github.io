@@ -136,3 +136,18 @@ table {
     color: #C7C3C4;
     font-size: 200%;
 }
+
+#search-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#search-container input {
+  width: 100%;
+}
+
+#results-container {
+  list-style-type: none;
+  padding: 3px;
+  margin: 3px;
+}

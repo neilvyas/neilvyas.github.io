@@ -2,6 +2,7 @@
 layout: post
 title:  "YC Austin Meetup"
 type: posts
+tags: cs startups data science
 ---
 
 This weekend was the YC Austin meetup, which was more or less a discussion panel featuring Justin Kan from Twitch, a YC partner, Steve Huffman, co-founder of Reddit and Hipmunk, James from Tilt, Lloyd and Jeremy from OwnLocal, and Scott from Treeline. Most of the questions answered were talking about the founders' experiences both during and after their time in YC. I found that most of what I learned from the panel was just gaining insight into how people like Justin Kan and Steve Huffman think (they think like completely reasonable people, no surprise).

@@ -2,6 +2,7 @@
 layout: post
 title: "On Hiring Data Scientists"
 type: posts
+tags: data science math
 ---
 
 It's widely held that data science is "the sexiest job of the century," and thus, as you can imagine, there are tons of people from a wide variety of backgrounds trying to get into the space. At work, we have been nonstop interviewing people for months now, and yet we very rarely find that perfect candidate. Actually, forget even perfect - many of the people we interview have disturbing gaps in their foundational knowledge, even as they do bleeding-edge research at top graduate programs.

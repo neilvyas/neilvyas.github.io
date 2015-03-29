@@ -1,25 +1,39 @@
 
 .Container {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
     max-width: 70em;
     margin: 0 auto;
 }
 .column.left {
     max-width: 20%;
+    -webkit-flex: 0 1 230px;          /* Chrome */
+    -ms-flex: 0 1 230px;              /* IE 10 */
     flex: 0 1 230px;
     margin: 1em;
 }
 .column.right {
     max-width: 20%;
+    -webkit-flex: 0 1 230px;          /* Chrome */
+    -ms-flex: 0 1 230px;              /* IE 10 */
     flex: 0 1 230px;
     margin: 1em;
 }
 .column.center {
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     margin: 1em;
 }
 
 .aligner {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
   display: flex;
   -webkit-align-items: center;
   height: 80%;
@@ -41,8 +55,8 @@
 }
 
 .nav {
-  position: fixed;
-  top: 80px;
+  position: static;
+  margin-top: 40%;
   width: 200px;
   height: 80%;
 }

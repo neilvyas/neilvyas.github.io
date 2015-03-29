@@ -8,13 +8,13 @@ It's widely held that data science is "the sexiest job of the century," and thus
 
 I won't be going into personal detail in order to protect the identities of everyone involved and/or risk damaging their potential careers, but some of these incidents may help shed some light on the sentiment that we're in a DS bubble. **Beyond that, I'm well aware that in high-pressure interview environments, people don't perform at their true ability. Additionally, the content of this post is drawn exclusively from my own experience and the views expressed are my own and do not represent those of my company.** What I'm trying to communicate here is the foundational inconsistency these answers reflect and the confidence with which they were given. [This DataTau thread](http://www.datatau.com/item?id=6758) has some interesting discussion that mirrors some of what I'll say here.
 
-You can skip the following two sections and just read the conclusion section `if you're not interested in specific examples.
+You can skip the following two sections and just read the conclusion section if you're not interested in specific examples.
 
 Let's investigate two cases; there were some other instances of shocking answers when tested on extremely basic material, like the meaning of confidence intervals and p-values, and calculating expectation of various games, but these are examples of candidates whose foundational shakiness we discovered very late into the process.
 
 **entropy and random forest**
 <hr>
-We had someone talk at length about entropy in random forest. Usually, when asked about random forest, reponses will be along the line of "they correct overfitting in decision trees," which is correct, but is essentially the first line of the wikipedia page. You can find more information about the connection between entropy and random forest [here](http://www.cip-labs.net/2013/01/17/introduction-to-random-forests/), but the gist of it is that the objective/cost function used is information gain/entropy, so you're trying to maximize information gain and maximize entropy.
+We had someone talk at length about entropy in random forest. Usually, when asked about random forest, reponses will be along the line of "they correct overfitting in decision trees," which is correct, but is essentially the first line of the wikipedia page. You can find more information about the connection between entropy and random forest [here](http://www.cip-labs.net/2013/01/17/introduction-to-random-forests/), but the gist of it is that the objective/cost function used is information gain/entropy, so you're trying to maximize information gain and minimize entropy.
 
 What this hinges on is an understanding of information-theoretic entropy, or Shannon entropy. The entropy H of a random variable is defined as the expectation of the self-information of the random variable. This sounds very esoteric until you think of self-information as surprisal, which basically means how surprised are you that you observed a particular outcome. In this way, the formulas that follow are very natural:
 

@@ -6,6 +6,7 @@ layout: none
     {
       "title"    : "{{ post.title | escape }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "type"	 : "{{ post.type }}",
       "date"     : "{{ post.date }}",
       "tags"	 : "{{ post.tags }}",
       "content"  : "{{ post.content | strip_html | strip_newlines }}"

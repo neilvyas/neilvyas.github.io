@@ -5,7 +5,7 @@
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
-    max-width: 70em;
+    max-width: 80em;
     margin: 0 auto;
 }
 .column.left {

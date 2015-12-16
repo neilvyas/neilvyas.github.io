@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+![profile](static/img/neil_vyas.jpg)
 
 This site is a collection of things I find interesting, primarily math and cs related, sometimes accompanied by my commentary. I'm a math major; my interests are primarily algebra and complex analysis. Currently, I work as a data science intern at Civitas Learning.
 

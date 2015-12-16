@@ -48,6 +48,9 @@ aside {
 img[alt=profile] {
   width: 100px;
   border: 1px solid black;
+  display: block;
+  margin: 0 auto;
+  border-radius: 40px;
 }
 
 h1, h2, h3, h4, h5, h6 {

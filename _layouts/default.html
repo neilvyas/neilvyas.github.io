@@ -1,47 +1,9 @@
 {% include head.html %}
-<body style="background: #efefef; font-family: Verdana; font-size: 90%;">
-  <div class="Container">
-    <div class="column left">
-      <div class="nav">
-        <div class="wrapper">
-          <div class="wrapper-content">
-            <a href="/" id="brand" style="font-family: Helvetica; font-size: 1.2em;">
-              Neil
-              <br>Vyas</a>
-            </div>
-          </div>
-          <ul>
-            <li>
-              <a href="/stream.html">stream</a>
-            </li>
-            <li>
-              <a href="/posts.html">posts</a>
-            </li>
-            <li>
-              <a href="/links.html">links</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="column center">
-        {{ content }}        
-      </div>
-      <div class="column right">
-        <div class="nav right">
-          <div class="wrapper">
-          </div>
-          <ul>
-            <li>
-              <a href="/about.html">about</a>
-            </li>
-            <li>
-              <a href="mailto:vyas.neil.nv@gmail.com">email</a>
-            </li>
-            <li>
-              <a href="{{ "/feed.xml" | prepend: site.baseurl }}">rss</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {% include footer.html %}
-    </body>
+<body>
+<aside>
+  {% include sidebar.html %}
+</aside>
+<article>
+  {{ content }}
+</article>
+</body>

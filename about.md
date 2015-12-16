@@ -17,6 +17,8 @@ significant interest in EECS. My interests include
 - [Imbalanced Classification](http://www.icmc.usp.br/~mcmonard/public/laptec2002.pdf)  
 - [Causal Inference](http://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf)  
 
+I'm a perennial data science intern at [Civitas Learning](http://www.civitaslearning.com/) here in Austin, working mainly on causal inference, scheduling and optimization, feature extraction and evaluation, and clustering. For Summer 2016 I am an intern on the Search Recommendations team at [Yelp](https://www.yelp.com) in San Francisco.
+
 You can find me online here:
 
 - [github](https://www.github.com/neilvyas)  

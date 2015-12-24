@@ -77,3 +77,7 @@ blockquote {
   border-left: 4px solid #0078E7;
   padding-left: 8px;
 }
+
+table {
+  font-size: inherit
+}

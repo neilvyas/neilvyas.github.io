@@ -2,7 +2,7 @@
 layout: default
 ---
 
-This is a minimal plaintext resume. You can find the pdf version [here]().
+This is a minimal plaintext resume. You can find the pdf version [here](/static/resume.pdf).
 
 Work Experience
 ---------------

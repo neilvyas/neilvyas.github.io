@@ -4,9 +4,9 @@ layout: default
 
 This is a minimal plaintext resume. You can find the pdf version [here](/static/resume.pdf).
 
-Work Experience
----------------
-**Yelp**, Search Recommendations Intern  
+Work Experience 
+--------------- 
+**Yelp**, Ads Autobidding Intern  
 San Francisco, Summer 2016 
 
 **Civitas Learning**, Data Science Intern  

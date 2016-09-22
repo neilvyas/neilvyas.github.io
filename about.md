@@ -3,26 +3,27 @@ layout: default
 ---
 ![profile](static/img/neil_vyas.jpg)
 
-This blog is a collection of things that I find interesting, primarily math and cs related, with 
-the occasional personal narrative. I'm a pure math major at The University of Texas at Austin, with
-significant interest in EECS. My interests include 
+A collection of things, and relationships between things, that I find interesting. I study pure math
+but have significant interest in CS, data science, education, and finance, particularly price
+discovery.
 
-- [Robust Optimization](https://faculty.fuqua.duke.edu/~dbbrown/bio/papers/bertsimas_brown_caramanis_11.pdf)  
-- [Decision Making Under Uncertainty](https://mitpress.mit.edu/decision-making-under-uncertainty)  
-- [Design and Analysis of Algorithms, especially Probababalistic Ones](http://www.immorlica.com/randAlg/Karp91.pdf)  
-- [Complex Analysis](http://www.fing.edu.uy/~cerminar/Complex_Analysis.pdf)  
-- [Probability and Stochastic Processes](http://www.math.harvard.edu/~knill/teaching/math144_1994/probability.pdf)  
-- [Model Uncertainty and Robustness](http://web.stanford.edu/~cy10/public/mrobust/Model_Robustness.pdf)  
-- [Machine Learning](https://work.caltech.edu/telecourse.html)  
-- [Imbalanced Classification](http://www.icmc.usp.br/~mcmonard/public/laptec2002.pdf)  
-- [Causal Inference](http://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf)  
+I've worked as a data science intern at Civitas Learning in Austin and as a engineering intern on the
+Ads Autobidding team at Yelp in San Francisco. I'm also part of UT's computational finance org, Texas
+UCF, which has been the one club membership that I've really valued over the years. My education has
+been basically all math classes with some forays into applications through CS and EE. Someday, I'll be
+a good academic and do some research. 
 
-I'm a perennial data science intern at [Civitas Learning](http://www.civitaslearning.com/) here in Austin, working mainly on causal inference, scheduling and optimization, feature extraction and evaluation, and clustering. For Summer 2016 I am an intern on the Search Recommendations team at [Yelp](https://www.yelp.com) in San Francisco.
+For fun, I enjoy reading and road biking (I have a wonderful white CAAD8). For productivity, I'm a
+fan of the terminal warrior aesthetic and use `vim` and `tmux` extensively. Since I do a lot of
+mathematics, I've also iterated my `LaTeX` setup enough to be able to live-`tex` notes and such.
 
-You can find me online here:
+Today's theory tidbit of the day (and possibly tomorrow's, and the day after's...):
 
-- [github](https://www.github.com/neilvyas)  
-- [quora](http://www.quora.com/Neil-Vyas-1)
+$$ \lim_n \int f_n d\mu = \int f d\mu, \qquad f_n \nearrow f,$$
 
+since math is all about `(i)` breaking things apart and putting them back together again and `(ii)`
+flipping the order of two things, and currently `(a)` I'm doing a lot of measure theory, `(b)` this
+statement invokes both `(i)` and `(ii)`, and `(c)` it's a very simple one-liner that turns out to be
+extremely useful but isn't as much of a `meme` as Bayes' Theorem.
 
 If you have any questions or want to get in touch, email me using the link on the sidebar.

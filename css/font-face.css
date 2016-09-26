@@ -1,0 +1,14 @@
+/* stolen from antimatter15 */
+@font-face {
+  font-family: 'Zombocom';
+  src: url('/static/Zombocom-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Zombocom';
+  src: url('/static/Zombocom-Medium.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}

@@ -1,8 +1,7 @@
 <div class="post-preview">
-  <div class="post-title">
-    <a href="{{include.post.url}}"><h1>{{ include.post.title }}</h1></a>
-  </div>
-  <div class="post-content">
-      {{ include.content }}
-  </div>
+  <a href="{{include.post.url}}">
+    <h1>{{ include.post.title }}</h1>
+    <small>{{ include.post.date | date: '%B %d, %Y' }}</small>
+  </a>
+  {{ include.content }}
 </div>

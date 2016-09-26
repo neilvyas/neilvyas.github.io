@@ -1,9 +1,7 @@
 {% include head.html %}
 <body>
-<aside>
-  {% include sidebar.html %}
-</aside>
-<article>
+<div class="page">
+  {% include header.html slug=page.witty %}
   {{ content }}
-</article>
+</div>
 </body>

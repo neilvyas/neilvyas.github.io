@@ -1,15 +1,12 @@
 ---
 layout: default
+witty: "/deluge"
 ---
 {% capture difference %} {{ site.posts | size | minus:1 }} {% endcapture %}
 {% if difference contains '-' %}
  {% include no-posts.html %}
 {% else %}
   {% for post in site.posts %}
-    {% if post.type contains "post" %}
-      {% include post-preview.html post=post content=post.excerpt %}
-    {% else %}
-      {% include stream_incl.html post=post content=post.content %}
-    {% endif %}
+    {% include post-preview.html post=post content=post.excerpt %}
   {% endfor %}
 {% endif %}

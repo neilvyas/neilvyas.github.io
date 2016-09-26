@@ -21,4 +21,4 @@ dotfiles and `LaTeX` setup on my github! Some people seem to like the `.cls` fil
 
 You can check out my [blog](blog) from the navbar. Someday, I'll write something interesting.
 Someday too I'll put a cool `elm` demo in here, or whatever. If you're reading this, me, you can do
-this!
+this! If you came for my resume, [here it is.](/static/resume.pdf)

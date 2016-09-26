@@ -19,6 +19,6 @@ aesthetic and use `vim` and `tmux` extensively. Since I do a lot of mathematics,
 my `LaTeX` setup enough to be able to live-`tex` notes and such. You can find my awfully-maintained
 dotfiles and `LaTeX` setup on my github! Some people seem to like the `.cls` files in particular.
 
-You can check out my [blog](blog.html) from the navbar. Someday, I'll write something interesting.
+You can check out my [blog](blog) from the navbar. Someday, I'll write something interesting.
 Someday too I'll put a cool `elm` demo in here, or whatever. If you're reading this, me, you can do
-this!
+this! If you came for my resume, [here it is.](/static/resume.pdf)

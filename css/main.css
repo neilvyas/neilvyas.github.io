@@ -1,4 +1,7 @@
 /* almost entirely shamelessly plagiarized from guillermo @ omrelli.ug */
+/* (his class names are awesome check them out) */
+/* font is from kevin @ antimatter15 */
+/* Gradient colors are from "electric violet" on uigradients.com */
 
 body, html {
   margin: 0;
@@ -9,6 +12,9 @@ body {
     text-align: justify;
     letter-spacing: -.1px;
     padding: 0 10px;
+}
+code {
+  font-family: Monaco, Consolas, monospace;
 }
 .header {
     color: #222;

@@ -9,3 +9,6 @@ github_username:  neilvyas
 
 # Build settings
 markdown: kramdown
+
+# Output settings
+permalink: /blg/:title

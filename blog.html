@@ -6,6 +6,7 @@ witty: "/deluge"
 {% if difference contains '-' %}
  {% include no-posts.html %}
 {% else %}
+  {% include blog_callout.html %}
   {% for post in site.posts %}
     {% include post-preview.html post=post content=post.excerpt %}
   {% endfor %}

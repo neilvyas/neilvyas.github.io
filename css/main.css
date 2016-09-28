@@ -118,3 +118,9 @@ blockquote {
     display: inline-block;
     //background: white;
 }
+.responsive {
+  overflow-x: scroll;
+  margin: 0 auto;
+  display: inherit;
+  max-width: 100%;
+}

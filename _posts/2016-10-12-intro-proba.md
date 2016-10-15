@@ -89,12 +89,16 @@ fulfill the following interface:
         else:
             return reiterate(intervals[:elems / 2]) + reiterate(intervals[elems / 2:])
 
+    memo = dict()
     def cantor_distribution(iterations, a=(0, 0), b=(1.0, 1.0)):
-        cantor_cdf = [a, b]
-        for _ in xrange(iterations):
-            cantor_cdf = reiterate(cantor_cdf)
-            
-        return cantor_cdf    
+        if iterations == 0:
+            memo[iterations] = [a, b]
+        if iterations in memo:
+            return memo[iterations]
+        else:
+            res = reiterate(cantor_distribution(iterations - 1, a, b))
+            memo[iterations] = res
+            return res
     ```
 
 [^continuity]:  

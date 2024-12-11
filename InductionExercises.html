@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-12-11 Wed 17:10 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Notes on James Wilcox's Generalizing Induction Hypotheses Exercises</title>
+<meta name="author" content="Neil Vyas" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Notes on James Wilcox&rsquo;s Generalizing Induction Hypotheses Exercises</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgbb52544">1. The Exercises and Why I Came to Them</a></li>
+<li><a href="#orga615fab">2. <span class="todo TODO">TODO</span> The Two Insights</a>
+<ul>
+<li><a href="#orga03592b">2.1. <span class="todo TODO">TODO</span> &ldquo;Induction Principles for Functions&rdquo;</a>
+<ul>
+<li><a href="#org384541c">2.1.1. &ldquo;one-step&rdquo; lemmas (e.g. <code>run_app</code>)</a></li>
+<li><a href="#orgc2b464d">2.1.2. &ldquo;simplificability&rdquo; lemmas (e.g. <code>run_compile_extend</code>)</a></li>
+</ul>
+</li>
+<li><a href="#orgdf9f672">2.2. <span class="todo TODO">TODO</span> Obtaining a More General IH</a>
+<ul>
+<li><a href="#org89f6b43">2.2.1. &ldquo;Stronger Tools are Better than Weaker Goals&rdquo;</a></li>
+<li><a href="#org5594d83">2.2.2. Methods of Generalization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgef5a73c">3. The &ldquo;Efficient Fibonacci&rdquo; Exercise</a>
+<ul>
+<li><a href="#orge821d81">3.1. A &ldquo;particularly elegant solution&rdquo;</a></li>
+<li><a href="#orge911a30">3.2. <code>fib_tail'</code> as a recurrence relation</a></li>
+<li><a href="#org9749981">3.3. An Alternative Induction Principle</a></li>
+</ul>
+</li>
+<li><a href="#org8f5a474">4. Errata</a>
+<ul>
+<li><a href="#orgbfcb2b3">4.1. Updating Libraries</a></li>
+<li><a href="#org71587e5">4.2. Natural Order for Compiling <code>Plus</code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbb52544" class="outline-2">
+<h2 id="orgbb52544"><span class="section-number-2">1.</span> The Exercises and Why I Came to Them</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+About a month ago, I started learning Coq by working through <i>Logical Foundations</i>. I felt that the book didn&rsquo;t include enough material, nor go into enough depth, regarding the fundamentals of proving things by induction, and so I decided to seek out additional resources. In that process, I came across this set of exercises by Dr. James Wilcox (which you can find on <a href="https://jamesrwilcox.com/InductionExercises.html">his website</a>).
+</p>
+
+<p>
+I enjoyed the exercises, and I found that they did help me deepen my understanding of techniques of inductive proof. Once I figured out a general principle a couple exercises in, all the rest fell to it immediately, excepting the last exercise. That last one receives a detailed treatment in these notes.
+</p>
+
+<p>
+Of course, no shade to <i>Logical Foundations</i>: the book is very good in general, and given that it&rsquo;s usually used for teaching and that its aim is very explicitly to get students to formalizing PL, I understand its treatment of these topics.
+</p>
+</div>
+</div>
+<div id="outline-container-orga615fab" class="outline-2">
+<h2 id="orga615fab"><span class="section-number-2">2.</span> <span class="todo TODO">TODO</span> The Two Insights</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga03592b" class="outline-3">
+<h3 id="orga03592b"><span class="section-number-3">2.1.</span> <span class="todo TODO">TODO</span> &ldquo;Induction Principles for Functions&rdquo;</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+This whole section requires a lot more thinking in order to phrase properly. The gist is that &ldquo;impossible&rdquo; inductive proofs are improved by two main ways: the most powerful is a &ldquo;simplificability&rdquo; lemma, in which the difficult expression in question is related to another expression which has nice inductive properties, and the second is with a &ldquo;one-step&rdquo; lemma, which partially evaluates the difficult expression and relates it to another form of itself.
+</p>
+</div>
+<div id="outline-container-org384541c" class="outline-4">
+<h4 id="org384541c"><span class="section-number-4">2.1.1.</span> &ldquo;one-step&rdquo; lemmas (e.g. <code>run_app</code>)</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<div class="org-src-container">
+<pre class="src src-coq">
+<span style="color: #e45649;">Lemma</span> <span style="color: #a626a4;">run_app</span> : <span style="color: #986801;">forall</span> <span style="color: #6a1868;">a b s</span>, run (a ++ b) s = run b (run a s).
+<span style="color: #e45649;">Proof</span>.
+  <span style="color: #00008b;">induction</span> a.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #ff0000;">reflexivity</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">intros</span>.
+    <span style="color: #00008b;">replace</span> ((a :: a0) ++ b) <span style="color: #986801;">with</span> (a :: (a0 ++ b)) <span style="color: #ff0000;">by</span> (<span style="color: #ff0000;">reflexivity</span>).
+    <span style="color: #00008b;">simpl</span>.
+    <span style="color: #00008b;">rewrite</span> IHa.
+    <span style="color: #ff0000;">reflexivity</span>.
+<span style="color: #e45649;">Qed</span>.
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc2b464d" class="outline-4">
+<h4 id="orgc2b464d"><span class="section-number-4">2.1.2.</span> &ldquo;simplificability&rdquo; lemmas (e.g. <code>run_compile_extend</code>)</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<div class="org-src-container">
+<pre class="src src-coq">
+<span style="color: #e45649;">Lemma</span> <span style="color: #a626a4;">run_compile_extend</span> : <span style="color: #986801;">forall</span> <span style="color: #6a1868;">e s</span>,
+    run (compile e) s = [eval_expr e] ++ s.
+<span style="color: #e45649;">Proof</span>.
+  <span style="color: #00008b;">induction</span> e; <span style="color: #00008b;">intros</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #ff0000;">reflexivity</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">simpl</span>.
+    <span style="color: #b452cd;">repeat</span> <span style="color: #00008b;">rewrite</span> run_app.
+    <span style="color: #00008b;">rewrite</span> IHe1, IHe2.
+    <span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">required because [run] doesn't evaluate in natural order.</span><span style="color: #9ca0a4;"> *)</span>
+    <span style="color: #00008b;">rewrite</span> Nat.add_comm.
+    <span style="color: #ff0000;">reflexivity</span>.
+<span style="color: #e45649;">Qed</span>.
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdf9f672" class="outline-3">
+<h3 id="orgdf9f672"><span class="section-number-3">2.2.</span> <span class="todo TODO">TODO</span> Obtaining a More General IH</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org89f6b43" class="outline-4">
+<h4 id="org89f6b43"><span class="section-number-4">2.2.1.</span> &ldquo;Stronger Tools are Better than Weaker Goals&rdquo;</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Synthesize the following, from my inline notes on the exercises:
+</p>
+
+<p>
+So why is [forall e s, run (compile e) s = [eval<sub>expr</sub> e] ++ s] so much easier to prove than [forall e, run (compile e) [] = [eval<sub>expr</sub> e]], even though the latter seems like a weaker statement?
+</p>
+
+<p>
+One explanation might be: because both theorems have similar structure, so their proofs will be structured in similar ways (namely, by induction on [e]); however, the more general theorem will produce a more general IH, which means that its proof will be correspondingly easier.
+</p>
+
+<p>
+In general, in the course of proving statements by induction, we will come across similar-but-not-exactly-equal statements, and thus a more general IH will be more useful. That is, since our main tool is induction, stating a weaker theorem gives us weaker tools.
+</p>
+</div>
+</div>
+<div id="outline-container-org5594d83" class="outline-4">
+<h4 id="org5594d83"><span class="section-number-4">2.2.2.</span> Methods of Generalization</h4>
+<div class="outline-text-4" id="text-2-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="org62f6079"></a>Generalizing Variables<br />
+<div class="outline-text-5" id="text-2-2-2-1">
+<p>
+The typical examples of using <code>generalize dependent</code>. These are the main ones given in <i>Logical Foundations</i>.
+</p>
+</div>
+</li>
+<li><a id="org7e4baad"></a>Generalizing Ground Values<br />
+<div class="outline-text-5" id="text-2-2-2-2">
+<p>
+E.g. <code>run_compile_extend</code>. I don&rsquo;t remember seeing these in <i>Logical Foundations</i>; these are the typical ones employed in this set of exercises.
+</p>
+</div>
+</li>
+<li><a id="org78d23c9"></a>Generalizing Logical Expressions<br />
+<div class="outline-text-5" id="text-2-2-2-3">
+<div class="org-src-container">
+<pre class="src src-coq">
+<span style="color: #e45649;">Theorem</span> <span style="color: #a626a4;">fib_ind</span> : <span style="color: #986801;">forall</span> <span style="color: #6a1868;">P</span> : nat -&gt; <span style="color: #986801;">Prop</span>,
+    P <span style="color: #da8548; font-weight: bold;">0</span> -&gt;
+    P <span style="color: #da8548; font-weight: bold;">1</span> -&gt;
+    (<span style="color: #986801;">forall</span> <span style="color: #6a1868;">n</span>, P n -&gt; P (S n) -&gt; P (S (S n))) -&gt;
+    <span style="color: #986801;">forall</span> <span style="color: #6a1868;">n</span>, P n.
+<span style="color: #e45649;">Proof</span>.
+  <span style="color: #00008b;">intros</span> P HP0 HP1 HPn n.
+  <span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">We have to do this in order to strengthen the IH enough that we obtain the</span>
+<span style="color: #9ca0a4;">  premises required for the third arm.</span><span style="color: #9ca0a4;"> *)</span>
+  <span style="color: #00008b;">enough</span> (P n /\ P (S n)) <span style="color: #ff0000;">by</span> <span style="color: #ff0000;">tauto</span>.
+  <span style="color: #00008b;">induction</span> n.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">split</span>; <span style="color: #ff0000;">assumption</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">destruct</span> IHn <span style="color: #986801;">as</span> [HPn' HPsn'].
+    <span style="color: #00008b;">split</span>.
+    <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">*</span> <span style="color: #ff0000;">assumption</span>.
+    <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">*</span> <span style="color: #00008b;">apply</span> HPn; <span style="color: #ff0000;">assumption</span>.
+<span style="color: #e45649;">Qed</span>.
+
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgef5a73c" class="outline-2">
+<h2 id="orgef5a73c"><span class="section-number-2">3.</span> The &ldquo;Efficient Fibonacci&rdquo; Exercise</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orge821d81" class="outline-3">
+<h3 id="orge821d81"><span class="section-number-3">3.1.</span> A &ldquo;particularly elegant solution&rdquo;</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Dr. Wilcox concludes these exercises with the following note, regarding the &ldquo;Efficient Fibonacci&rdquo; problem:
+</p>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+Prove this by proving one or more helper lemmas by induction. This one is harder than the others in the file, and I don&rsquo;t fully understand the &ldquo;why&rdquo; of my own solution. I would be eager to hear about any particularly elegant solutions or explanations.
+</p>
+</blockquote>
+
+<p>
+I&rsquo;d like to think that my solution is both elegant and well-understood, so here&rsquo;s my explanation!
+</p>
+
+<p>
+For context, I&rsquo;ll reproduce the setup:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-coq">
+<span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">This naive implementation runs in exponential time:</span><span style="color: #9ca0a4;"> *)</span>
+<span style="color: #e45649;">Fixpoint</span> <span style="color: #a626a4;">fib</span> (<span style="color: #6a1868;">n</span> : nat) :=
+  <span style="color: #986801;">match</span> n <span style="color: #986801;">with</span>
+  | <span style="color: #da8548; font-weight: bold;">0</span> =&gt; <span style="color: #da8548; font-weight: bold;">1</span>
+  | S n' =&gt; <span style="color: #986801;">match</span> n' <span style="color: #986801;">with</span>
+           | <span style="color: #da8548; font-weight: bold;">0</span> =&gt; <span style="color: #da8548; font-weight: bold;">1</span>
+           | S n'' =&gt; fib n' + fib n''
+           <span style="color: #986801;">end</span>
+  <span style="color: #986801;">end</span>.
+
+<span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">An efficient, tail-recursive implementation:</span><span style="color: #9ca0a4;"> *)</span>
+<span style="color: #e45649;">Fixpoint</span> <span style="color: #a626a4;">fib_tail'</span> (<span style="color: #6a1868;">n a b</span> : nat) : nat :=
+  <span style="color: #986801;">match</span> n <span style="color: #986801;">with</span>
+  | <span style="color: #da8548; font-weight: bold;">0</span> =&gt; b
+  | S n' =&gt; fib_tail' n' (a + b) a
+  <span style="color: #986801;">end</span>.
+
+<span style="color: #e45649;">Definition</span> <span style="color: #a626a4;">fib_tail</span> (<span style="color: #6a1868;">n</span> : nat) :=
+  fib_tail' n <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">1</span>.
+
+<span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">Let's show that the naive implementation and the efficient one coincide.</span><span style="color: #9ca0a4;"> *)</span>
+<span style="color: #e45649;">Theorem</span> <span style="color: #a626a4;">fib_tail_correct</span> : <span style="color: #986801;">forall</span> <span style="color: #6a1868;">n</span>,
+    fib_tail n = fib n.
+<span style="color: #e45649;">Proof</span>.
+  <span style="background-color: #ff0000;">Admitted</span>.
+
+</pre>
+</div>
+
+<p>
+There are two key pieces to my proof of <code>fib_tail_correct</code>: the first is recognizing a &ldquo;simplificability&rdquo; lemma for <code>fib_tail'</code>, and the second is recognizing that working with <code>fib n</code> is greatly improved with an alternative induction principle.
+</p>
+</div>
+</div>
+<div id="outline-container-orge911a30" class="outline-3">
+<h3 id="orge911a30"><span class="section-number-3">3.2.</span> <code>fib_tail'</code> as a recurrence relation</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Following the thread of reasoning developed earlier, we know that we need to find a general relationship between <code>fib_tail' n a b</code> (with <code>n</code>, <code>a</code>, <code>b</code> all general) and something &ldquo;simplificable&rdquo;.
+</p>
+
+<p>
+Fibonacci is numerically gross, so I decided to just avoid trying to work with numerical values of <code>a</code> and <code>b</code> entirely, thinking that that would lead down a dark and difficult road.
+</p>
+
+<p>
+Thus, I decided to take an approach inspired by abstract interpretation: instead of trying to find a direct numerical relationship between <code>n</code>, <code>a</code>, and <code>b</code>, what if we just counted how many times <code>a</code> and <code>b</code> occur in <code>fib_tail' n a b</code> for various <code>n</code>?
+</p>
+
+<p>
+Recall that the definition of <code>fib_tail'</code>, roughly, repeatedly adds its arguments and then shifts the first into the second.
+</p>
+
+<p>
+First, treating addition like concatenation, we get a relation like the following:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><code>n</code></th>
+<th scope="col" class="org-left"><code>a</code></th>
+<th scope="col" class="org-left"><code>b</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">a</td>
+<td class="org-left">b</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">ab</td>
+<td class="org-left">a</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">aba</td>
+<td class="org-left">ab</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">abaab</td>
+<td class="org-left">aba</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">abaababa</td>
+<td class="org-left">abaab</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">abaababaabaab</td>
+<td class="org-left">abaababa</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+and now counting ~a~s and ~b~s gets us:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><code>n</code></th>
+<th scope="col" class="org-left"><code>a</code></th>
+<th scope="col" class="org-left"><code>b</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">(1, 0)</td>
+<td class="org-left">(0, 1)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">(1, 1)</td>
+<td class="org-left">(1, 0)</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">(2, 1)</td>
+<td class="org-left">(1, 1)</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">(3, 2)</td>
+<td class="org-left">(2, 1)</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">(5, 3)</td>
+<td class="org-left">(3, 2)</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">(8, 5)</td>
+<td class="org-left">(5, 3)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Note: we take a bit of license in the labeling of these tables. Technically, the column names refer to values associated with the argument named, and the <code>n</code> column should be decreasing rather than increasing; however, I think our approach makes the desired observation clearer.
+</p>
+
+<p>
+That pattern looks very suspicious. In fact, it looks like the number of times <code>a</code> and <code>b</code> appear in the &ldquo;answer&rdquo; of <code>fib_tail' n a b</code> is itself given by the Fibonacci series!
+</p>
+
+<p>
+From here, it&rsquo;s straightforward to state the desired &ldquo;simplificability&rdquo; relation in terms of <code>n</code>, <code>a</code>, <code>b</code>, and <code>fib</code>, noting that the &ldquo;answer&rdquo; for <code>fib_tail'</code> appears in the <code>b</code> argument position.
+</p>
+
+<p>
+For example, in <code>fib_tail' 3 a b</code>, we expect there to be two instances of <code>a</code> and one of <code>b</code>, reading off the <code>b</code> column in our table, and indeed <code>fib(2)</code> is two and <code>fib(1)</code> is 1. So, the lemma is as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-coq">
+<span style="color: #e45649;">Theorem</span> <span style="color: #a626a4;">fib_tail_recurrence</span> : <span style="color: #986801;">forall</span> <span style="color: #6a1868;">n a b</span>,
+  fib_tail' (S (S n)) a b = fib (S n) * a + fib n * b.
+<span style="color: #e45649;">Proof</span>.
+  <span style="color: #00008b;">induction</span> n; <span style="color: #00008b;">intros</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">simpl</span>; <span style="color: #ff0000;">lia</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">replace</span> (fib_tail' (S (S (S n))) a b) <span style="color: #986801;">with</span>
+            (fib_tail' (S (S n)) (a + b) a) <span style="color: #ff0000;">by</span> (<span style="color: #ff0000;">reflexivity</span>);
+    <span style="color: #00008b;">rewrite</span> IHn;
+    <span style="color: #00008b;">simpl</span>;
+    <span style="color: #ff0000;">lia</span>.
+<span style="color: #e45649;">Qed</span>.
+
+</pre>
+</div>
+
+<p>
+Of course, we don&rsquo;t have to rely on <code>lia</code> here, but the explicit proofs it subsumes aren&rsquo;t particularly illuminating. The key step is the one-step simplification of <code>fib_tail'</code> in the inductive case, which is why we need the <code>a</code> and <code>b</code> arguments to be generalized.
+</p>
+
+<p>
+A note: the pattern doesn&rsquo;t really hold for cases where <code>n</code> is 0 or 1. The particular form of the statement lets us get around this; the minimal value of <code>n</code> in a value of <code>fib_tail' n</code> for which this lemma can be used is 2. Being new to Coq, I initially tried to phrase this with a constraint, like <code>n &gt;= 2</code>; earlier I would call this approach &ldquo;intuitive&rdquo;, now &ldquo;naive&rdquo; and &ldquo;doomed to failure&rdquo;.
+</p>
+
+<p>
+The odd form of this lemma is what I assume Dr. Wilcox is referring to when he says that he doesn&rsquo;t completely understand the &ldquo;why&rdquo; of his own solution, so I hope that my explanation-by-counting is sufficient.
+</p>
+</div>
+</div>
+<div id="outline-container-org9749981" class="outline-3">
+<h3 id="org9749981"><span class="section-number-3">3.3.</span> An Alternative Induction Principle</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Now that we have this &ldquo;simplificability&rdquo; lemma, we need to apply it to the overall proof. There is a problem, however: the odd form of the lemma, namely the first <code>fib_tail' (S (S n)) ...</code> bit, means that we can only apply it in particular situations. There is a secondary problem in that we&rsquo;re trying to prove equality with <code>fib n</code>, which, being a recurrence relation defined in terms of <code>n - 1</code> and <code>n - 2</code>, is annoying to work with using the typical induction principle on integers.
+</p>
+
+<p>
+Thankfully, we can address both these problems at a stroke. Namely, we just need an alternative induction principle, one more suited to the structure of the Fibonacci sequence.
+</p>
+
+<p>
+I won&rsquo;t go into detail about this, as there&rsquo;s plenty online about alternative induction principles, and usually either this Fibonacci-oriented one or one about even numbers are used as motivating examples (the latter appears in <i>Logical Foundations</i>).
+</p>
+
+<p>
+Note that my implementation of <code>fib_ind</code> mostly comes from <a href="https://stackoverflow.com/a/40595110">this StackOverflow answer</a> by Anton Trunov, though I did give a much worse implementation myself. Its proof also demonstrates another technique for generalizing the IH, and one which I found the most surprising: generalizing a logical expression.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-coq">
+<span style="color: #e45649;">Theorem</span> <span style="color: #a626a4;">fib_ind</span> : <span style="color: #986801;">forall</span> <span style="color: #6a1868;">P</span> : nat -&gt; <span style="color: #986801;">Prop</span>,
+    P <span style="color: #da8548; font-weight: bold;">0</span> -&gt;
+    P <span style="color: #da8548; font-weight: bold;">1</span> -&gt;
+    (<span style="color: #986801;">forall</span> <span style="color: #6a1868;">n</span>, P n -&gt; P (S n) -&gt; P (S (S n))) -&gt;
+    <span style="color: #986801;">forall</span> <span style="color: #6a1868;">n</span>, P n.
+<span style="color: #e45649;">Proof</span>.
+  <span style="color: #00008b;">intros</span> P HP0 HP1 HPn n.
+  <span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">We have to do this in order to strengthen the IH enough that we obtain the</span>
+<span style="color: #9ca0a4;">  premises required for the third arm.</span><span style="color: #9ca0a4;"> *)</span>
+  <span style="color: #00008b;">enough</span> (P n /\ P (S n)) <span style="color: #ff0000;">by</span> <span style="color: #ff0000;">tauto</span>.
+  <span style="color: #00008b;">induction</span> n.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">split</span>; <span style="color: #ff0000;">assumption</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">destruct</span> IHn <span style="color: #986801;">as</span> [HPn' HPsn'].
+    <span style="color: #00008b;">split</span>.
+    <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">+</span> <span style="color: #ff0000;">assumption</span>.
+    <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">+</span> <span style="color: #00008b;">apply</span> HPn; <span style="color: #ff0000;">assumption</span>.
+<span style="color: #e45649;">Qed</span>.
+
+
+<span style="color: #e45649;">Theorem</span> <span style="color: #a626a4;">fib_tail_correct</span> :
+  <span style="color: #986801;">forall</span> <span style="color: #6a1868;">n</span>,
+    fib_tail n = fib n.
+<span style="color: #e45649;">Proof</span>.
+  <span style="color: #00008b;">unfold</span> fib_tail.
+  <span style="color: #00008b;">apply</span> fib_ind.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #ff0000;">reflexivity</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #ff0000;">reflexivity</span>.
+  <span style="color: #4078f2; font-weight: bold; text-decoration: underline;">-</span> <span style="color: #00008b;">intros</span> n Hn HSn.
+    <span style="color: #00008b;">rewrite</span> fib_tail_recurrence.
+    <span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">We could use [fib_defn] here to avoid [lia].</span><span style="color: #9ca0a4;"> *)</span>
+    <span style="color: #00008b;">simpl</span>.
+    <span style="color: #ff0000;">lia</span>.
+<span style="color: #e45649;">Qed</span>.
+
+</pre>
+</div>
+
+<p>
+With the alternative induction principle, the proof is about as elegant as it can get: the first two cases reflect base cases, and in the inductive case, we&rsquo;re able to use our lemma to get the result cleanly. So concludes my presentation of my &ldquo;particularly elegant solution&rdquo;!
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8f5a474" class="outline-2">
+<h2 id="org8f5a474"><span class="section-number-2">4.</span> Errata</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgbfcb2b3" class="outline-3">
+<h3 id="orgbfcb2b3"><span class="section-number-3">4.1.</span> Updating Libraries</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+The <code>Arith</code> and <code>Omega</code> libraries should be updated to <code>Nat</code> and <code>Lia</code>, respectively.
+</p>
+</div>
+</div>
+<div id="outline-container-org71587e5" class="outline-3">
+<h3 id="org71587e5"><span class="section-number-3">4.2.</span> Natural Order for Compiling <code>Plus</code></h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Briefly, the stack-machine implementation of <code>Plus</code> and the interpreter implementation do not agree on the order of their arguments. The two implementations still agree modulo commutativity, so proving equivalence is possible, but requires an unnecessary <code>rewrite Nat.add_comm</code>.
+</p>
+
+<p>
+This same issue appears in <i>Logical Foundations</i>, in its stack-machine exercises for the demonstrator language <code>Imp</code>.
+</p>
+
+<p>
+The definitions of <code>run</code> and <code>compile</code> as given in the exercises follow, with comments marking out the &ldquo;fixes&rdquo;.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-coq">
+<span style="color: #e45649;">Fixpoint</span> <span style="color: #a626a4;">run</span> (<span style="color: #6a1868;">p</span> : prog) (<span style="color: #6a1868;">s</span> : stack) : stack :=
+  <span style="color: #986801;">match</span> p <span style="color: #986801;">with</span>
+  | [] =&gt; s
+  | i :: p' =&gt; <span style="color: #986801;">let</span> s' :=
+                  <span style="color: #986801;">match</span> i <span style="color: #986801;">with</span>
+                  | Push n =&gt; n :: s
+                  | Add =&gt; <span style="color: #986801;">match</span> s <span style="color: #986801;">with</span>
+                          <span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">alternative "fix" site</span><span style="color: #9ca0a4;"> *)</span>
+                          | a1 :: a2 :: s' =&gt; a1 + a2 :: s'
+                          | _ =&gt; s
+                          <span style="color: #986801;">end</span>
+                  <span style="color: #986801;">end</span> <span style="color: #986801;">in</span>
+              run p' s'
+  <span style="color: #986801;">end</span>.
+
+<span style="color: #e45649;">Fixpoint</span> <span style="color: #a626a4;">compile</span> (<span style="color: #6a1868;">e</span> : expr) : prog :=
+  <span style="color: #986801;">match</span> e <span style="color: #986801;">with</span>
+  | Const n =&gt; [Push n]
+  <span style="color: #9ca0a4;">(* </span><span style="color: #9ca0a4;">to accord with the semantics of [eval_expr], [e1] and [e2] should be</span>
+<span style="color: #9ca0a4;">  switched, either here or in [run] (as [a1] and [a2]).</span><span style="color: #9ca0a4;"> *)</span>
+  | Plus e1 e2 =&gt; compile e1 ++ compile e2 ++ [Add]
+  <span style="color: #986801;">end</span>.
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Neil Vyas</p>
+<p class="date">Created: 2024-12-11 Wed 17:10</p>
+</div>
+</body>
+</html>
